@@ -44,20 +44,6 @@ const ExperienceForm = ({ experience, handleExperienceChange }) => {
         <div key={exp.id}>
           <input
             type="text"
-            name="company"
-            value={exp.company}
-            onChange={(e) => handleInputChange(e, exp.id)}
-            placeholder="Company"
-          />
-          <input
-            type="text"
-            name="position"
-            value={exp.position}
-            onChange={(e) => handleInputChange(e, exp.id)}
-            placeholder="Position"
-          />
-          <input
-            type="text"
             name="startDate"
             value={exp.startDate}
             onChange={(e) => handleInputChange(e, exp.id)}
@@ -77,6 +63,20 @@ const ExperienceForm = ({ experience, handleExperienceChange }) => {
             onChange={(e) => handleInputChange(e, exp.id)}
             placeholder="Location"
           />
+          <input
+            type="text"
+            name="company"
+            value={exp.company}
+            onChange={(e) => handleInputChange(e, exp.id)}
+            placeholder="Company"
+          />
+          <input
+            type="text"
+            name="position"
+            value={exp.position}
+            onChange={(e) => handleInputChange(e, exp.id)}
+            placeholder="Position"
+          />
           <textarea
             type="textarea"
             rows="10"
@@ -86,13 +86,23 @@ const ExperienceForm = ({ experience, handleExperienceChange }) => {
             placeholder="Description"
           />
           {exp.id !== experienceDetails[0].id && (
-            <button onClick={() => handleRemoveExperience(exp.id)}>
-              Remove
+            <button>
+              <img
+                src="src/assets/delete_button.svg"
+                alt="delete button"
+                onClick={() => handleRemoveExperience(edu.id)}
+              />
             </button>
           )}
         </div>
       ))}
-      <button onClick={handleAddExperience}>Add Experience</button>
+      <button>
+        <img
+          src="src/assets/add_button.svg"
+          alt="add button"
+          onClick={handleAddExperience}
+        />
+      </button>
     </div>
   );
 };

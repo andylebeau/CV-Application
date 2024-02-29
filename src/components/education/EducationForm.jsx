@@ -43,20 +43,6 @@ const EducationForm = ({ education, handleEducationChange }) => {
         <div key={edu.id}>
           <input
             type="text"
-            name="school"
-            value={edu.school}
-            onChange={(e) => handleInputChange(e, edu.id)}
-            placeholder="School"
-          />
-          <input
-            type="text"
-            name="degree"
-            value={edu.degree}
-            onChange={(e) => handleInputChange(e, edu.id)}
-            placeholder="Degree"
-          />
-          <input
-            type="text"
             name="startDate"
             value={edu.startDate}
             onChange={(e) => handleInputChange(e, edu.id)}
@@ -76,14 +62,38 @@ const EducationForm = ({ education, handleEducationChange }) => {
             onChange={(e) => handleInputChange(e, edu.id)}
             placeholder="Location"
           />
+          <input
+            type="text"
+            name="school"
+            value={edu.school}
+            onChange={(e) => handleInputChange(e, edu.id)}
+            placeholder="School"
+          />
+          <input
+            type="text"
+            name="degree"
+            value={edu.degree}
+            onChange={(e) => handleInputChange(e, edu.id)}
+            placeholder="Degree"
+          />
           {edu.id !== educationDetails[0].id && (
-            <button onClick={() => handleRemoveEducation(edu.id)}>
-              Remove
+            <button>
+              <img
+                src="src/assets/delete_button.svg"
+                alt="delete button"
+                onClick={() => handleRemoveEducation(edu.id)}
+              />
             </button>
           )}
         </div>
       ))}
-      <button onClick={handleAddEducation}>Add Education</button>
+      <button>
+        <img
+          src="src/assets/add_button.svg"
+          alt="add button"
+          onClick={handleAddEducation}
+        />
+      </button>
     </div>
   );
 };
