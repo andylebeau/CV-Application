@@ -28,13 +28,15 @@ body {
   border-radius: 12px;
 }
 
-.left-section {
+.input-section {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.left-section > * {
+.personal-details-section,
+.education-section,
+.experience-section {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -43,16 +45,30 @@ body {
   padding: 20px;
 }
 
-.right-section {
-  background-color: white;
-  border-radius: 12px;
+.education-section > *,
+.experience-section > * {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 40px;
 }
 
-input {
+.education-section > h2,
+.experience-section > h2 {
+  padding-bottom: 0;
+}
+
+input,
+textarea {
   padding: 10px;
   border: 2px solid transparent;
   border-radius: 12px;
   background-color: #f3f4f6;
+}
+
+.resume-preview {
+  background-color: white;
+  border-radius: 12px;
 }
 
 .resume-header {
@@ -85,4 +101,8 @@ input {
   display: flex;
   gap: 50px;
   margin: 20px 0;
+}
+
+.description {
+  margin-top: 10px;
 }
