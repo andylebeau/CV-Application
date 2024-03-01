@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import generateUniqueId from '../utilities/generateUniqueID';
 
 const EducationForm = ({ education, handleEducationChange }) => {
-  const [educationDetails, setEducationDetails] = useState(education);
+  const [educationDetails, setEducationDetails] = useState([]);
 
-  const handleInputChange = (e, id) => {
+  const handleCurrentEducationChange = (e, id) => {
     const { name, value } = e.target;
     const updatedEducation = educationDetails.map((edu) => {
       if (edu.id === id) {
@@ -38,62 +38,62 @@ const EducationForm = ({ education, handleEducationChange }) => {
 
   return (
     <div className="education-section">
-      <h2>Education</h2>
+      <div className="input-section-header">
+        <h2>Education</h2>
+        <button>
+          <img
+            src="src/assets/add_button.svg"
+            alt="add button"
+            onClick={handleAddEducation}
+          />
+        </button>
+      </div>
       {educationDetails.map((edu) => (
         <div key={edu.id}>
           <input
             type="text"
             name="startDate"
             value={edu.startDate}
-            onChange={(e) => handleInputChange(e, edu.id)}
+            onChange={(e) => handleCurrentEducationChange(e, edu.id)}
             placeholder="Start Date"
           />
           <input
             type="text"
             name="endDate"
             value={edu.endDate}
-            onChange={(e) => handleInputChange(e, edu.id)}
+            onChange={(e) => handleCurrentEducationChange(e, edu.id)}
             placeholder="End Date"
           />
           <input
             type="text"
             name="location"
             value={edu.location}
-            onChange={(e) => handleInputChange(e, edu.id)}
+            onChange={(e) => handleCurrentEducationChange(e, edu.id)}
             placeholder="Location"
           />
           <input
             type="text"
             name="school"
             value={edu.school}
-            onChange={(e) => handleInputChange(e, edu.id)}
+            onChange={(e) => handleCurrentEducationChange(e, edu.id)}
             placeholder="School"
           />
           <input
             type="text"
             name="degree"
             value={edu.degree}
-            onChange={(e) => handleInputChange(e, edu.id)}
+            onChange={(e) => handleCurrentEducationChange(e, edu.id)}
             placeholder="Degree"
           />
-          {edu.id !== educationDetails[0].id && (
-            <button>
-              <img
-                src="src/assets/delete_button.svg"
-                alt="delete button"
-                onClick={() => handleRemoveEducation(edu.id)}
-              />
-            </button>
-          )}
+          <button className="delete-button">
+            <img
+              src="src/assets/delete_button.svg"
+              alt="delete button"
+              onClick={() => handleRemoveEducation(edu.id)}
+            />
+          </button>
         </div>
       ))}
-      <button>
-        <img
-          src="src/assets/add_button.svg"
-          alt="add button"
-          onClick={handleAddEducation}
-        />
-      </button>
     </div>
   );
 };

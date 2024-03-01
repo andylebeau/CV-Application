@@ -3,7 +3,9 @@ const EducationPreview = ({ school, degree, startDate, endDate, location }) => {
     <section className="section-layout">
       <div className="left-column">
         <p>
-          {startDate} - {endDate}
+          {startDate}
+          {startDate && endDate && <span> – </span>}
+          {endDate}
         </p>
         <p>{location}</p>
       </div>
