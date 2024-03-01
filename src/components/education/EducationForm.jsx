@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import generateUniqueId from '../utilities/generateUniqueID';
 
-const EducationForm = ({ education, handleEducationChange }) => {
+function EducationForm({ handleEducationChange }) {
   const [educationDetails, setEducationDetails] = useState([]);
 
   const handleCurrentEducationChange = (e, id) => {
@@ -30,8 +30,8 @@ const EducationForm = ({ education, handleEducationChange }) => {
     handleEducationChange(updatedEducation);
   };
 
-  const handleRemoveEducation = (id) => {
-    const updatedEducation = educationDetails.filter((edu) => edu.id !== id);
+  const handleRemoveEducation = (key) => {
+    const updatedEducation = educationDetails.filter((edu) => edu.id !== key);
     setEducationDetails(updatedEducation);
     handleEducationChange(updatedEducation);
   };
@@ -55,14 +55,14 @@ const EducationForm = ({ education, handleEducationChange }) => {
             name="startDate"
             value={edu.startDate}
             onChange={(e) => handleCurrentEducationChange(e, edu.id)}
-            placeholder="Start Date"
+            placeholder="Start Date mm/yyyy"
           />
           <input
             type="text"
             name="endDate"
             value={edu.endDate}
             onChange={(e) => handleCurrentEducationChange(e, edu.id)}
-            placeholder="End Date"
+            placeholder="End Date mm/yyyy"
           />
           <input
             type="text"
@@ -96,6 +96,6 @@ const EducationForm = ({ education, handleEducationChange }) => {
       ))}
     </div>
   );
-};
+}
 
 export default EducationForm;

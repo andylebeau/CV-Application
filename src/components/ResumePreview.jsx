@@ -18,14 +18,14 @@ const ResumePreview = ({ personalDetails, education, experience }) => {
         <div className="section-header">
           <h2>Education</h2>
         </div>
-        {education.map((edu, index) => (
+        {education.map((edu) => (
           <EducationPreview
-            key={index}
-            school={edu.school}
-            degree={edu.degree}
+            key={edu.id}
             startDate={edu.startDate}
             endDate={edu.endDate}
             location={edu.location}
+            school={edu.school}
+            degree={edu.degree}
           />
         ))}
         <div className="section-header">
@@ -33,12 +33,12 @@ const ResumePreview = ({ personalDetails, education, experience }) => {
         </div>
         {experience.map((exp, index) => (
           <ExperiencePreview
-            key={index}
-            company={exp.company}
-            position={exp.position}
+            key={exp.id}
             startDate={exp.startDate}
             endDate={exp.endDate}
             location={exp.location}
+            company={exp.company}
+            position={exp.position}
             description={exp.description}
           />
         ))}

@@ -4,6 +4,7 @@ import ResumePreview from './components/ResumePreview';
 import EducationForm from './components/education/EducationForm';
 import ExperienceForm from './components/experience/ExperienceForm';
 import './styles/App.css';
+import generateUniqueId from './components/utilities/generateUniqueID';
 
 const App = () => {
   const [personalDetails, setPersonalDetails] = useState({
@@ -15,6 +16,7 @@ const App = () => {
 
   const [education, setEducation] = useState([
     {
+      id: generateUniqueId(),
       school: '',
       degree: '',
       startDate: '',
@@ -25,6 +27,7 @@ const App = () => {
 
   const [experience, setExperience] = useState([
     {
+      id: generateUniqueId(),
       company: '',
       position: '',
       startDate: '',

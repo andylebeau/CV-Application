@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import generateUniqueId from '../utilities/generateUniqueID';
 
-const ExperienceForm = ({ experience, handleExperienceChange }) => {
+function ExperienceForm({ handleExperienceChange }) {
   const [experienceDetails, setExperienceDetails] = useState([]);
 
   const handleCurrentExperienceChange = (e, id) => {
@@ -31,8 +31,8 @@ const ExperienceForm = ({ experience, handleExperienceChange }) => {
     handleExperienceChange(updatedExperience);
   };
 
-  const handleRemoveExperience = (id) => {
-    const updatedExperience = experienceDetails.filter((exp) => exp.id !== id);
+  const handleRemoveExperience = (key) => {
+    const updatedExperience = experienceDetails.filter((exp) => exp.id !== key);
     setExperienceDetails(updatedExperience);
     handleExperienceChange(updatedExperience);
   };
@@ -56,14 +56,14 @@ const ExperienceForm = ({ experience, handleExperienceChange }) => {
             name="startDate"
             value={exp.startDate}
             onChange={(e) => handleCurrentExperienceChange(e, exp.id)}
-            placeholder="Start Date"
+            placeholder="Start Date mm/yyyy"
           />
           <input
             type="text"
             name="endDate"
             value={exp.endDate}
             onChange={(e) => handleCurrentExperienceChange(e, exp.id)}
-            placeholder="End Date"
+            placeholder="End Date mm/yyyy"
           />
           <input
             type="text"
@@ -105,6 +105,6 @@ const ExperienceForm = ({ experience, handleExperienceChange }) => {
       ))}
     </div>
   );
-};
+}
 
 export default ExperienceForm;

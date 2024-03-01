@@ -1,11 +1,11 @@
-const ExperiencePreview = ({
+function ExperiencePreview({
   company,
   position,
   startDate,
   endDate,
   location,
   description,
-}) => {
+}) {
   return (
     <section className="section-layout">
       <div className="left-column">
@@ -23,6 +23,6 @@ const ExperiencePreview = ({
       </div>
     </section>
   );
-};
+}
 
 export default ExperiencePreview;

@@ -1,31 +1,29 @@
-import InputField from '../utilities/InputField';
-
-const PersonalDetailsForm = ({ handleInputChange }) => {
+function PersonalDetailsForm({ handleInputChange }) {
   return (
     <section className="personal-details-section">
       <h2>Personal Details</h2>
-      <InputField
+      <input
         id="fullname"
         type="text"
         name="fullname"
         placeholder="Full Name"
         onChange={handleInputChange}
       />
-      <InputField
+      <input
         id="email"
         type="email"
         name="email"
         placeholder="Email"
         onChange={handleInputChange}
       />
-      <InputField
+      <input
         id="phone"
         type="tel"
         name="phone"
         placeholder="Phone"
         onChange={handleInputChange}
       />
-      <InputField
+      <input
         id="address"
         type="text"
         name="address"
@@ -34,6 +32,6 @@ const PersonalDetailsForm = ({ handleInputChange }) => {
       />
     </section>
   );
-};
+}
 
 export default PersonalDetailsForm;

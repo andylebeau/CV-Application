@@ -1,4 +1,4 @@
-const EducationPreview = ({ school, degree, startDate, endDate, location }) => {
+function EducationPreview({ school, degree, startDate, endDate, location }) {
   return (
     <section className="section-layout">
       <div className="left-column">
@@ -15,6 +15,6 @@ const EducationPreview = ({ school, degree, startDate, endDate, location }) => {
       </div>
     </section>
   );
-};
+}
 
 export default EducationPreview;
