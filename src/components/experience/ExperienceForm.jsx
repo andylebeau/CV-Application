@@ -43,7 +43,7 @@ function ExperienceForm({ handleExperienceChange }) {
         <h2>Experience</h2>
         <button>
           <img
-            src="src/assets/add_button.svg"
+            src="/addButton.svg"
             alt="add button"
             onClick={handleAddExperience}
           />
@@ -96,7 +96,7 @@ function ExperienceForm({ handleExperienceChange }) {
           />
           <button className="delete-button">
             <img
-              src="src/assets/delete_button.svg"
+              src="/deleteButton.svg"
               alt="delete button"
               onClick={() => handleRemoveExperience(exp.id)}
             />

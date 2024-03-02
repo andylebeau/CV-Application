@@ -42,7 +42,7 @@ function EducationForm({ handleEducationChange }) {
         <h2>Education</h2>
         <button>
           <img
-            src="src/assets/add_button.svg"
+            src="/addButton.svg"
             alt="add button"
             onClick={handleAddEducation}
           />
@@ -87,7 +87,7 @@ function EducationForm({ handleEducationChange }) {
           />
           <button className="delete-button">
             <img
-              src="src/assets/delete_button.svg"
+              src="/deleteButton.svg"
               alt="delete button"
               onClick={() => handleRemoveEducation(edu.id)}
             />
